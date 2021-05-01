@@ -1,6 +1,8 @@
 package sample;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class Controller {
@@ -9,7 +11,32 @@ public class Controller {
     private TextField nameField;
 
     @FXML
-    public void onButtonClicked (){
+    private Button
+                    helloButton,
+                    byeButton;
+
+
+    @FXML
+    public void initialize() {
+        helloButton.setDisable(true);
+        byeButton.setDisable(true);
+    }
+
+    @FXML
+    public void onButtonClicked (ActionEvent event){
         System.out.println("Hello, " + nameField.getText());
+        if(event.getSource().equals(helloButton)) {
+            System.out.println("Hello, " + nameField.getText());
+        } else if(event.getSource().equals(byeButton)) {
+            System.out.println("Bye, " + nameField.getText());
+        }
+    }
+
+    @FXML
+    public void handleKeyReleased() {
+        String text = nameField.getText();
+        boolean disableButtons = text.isEmpty() || text.trim().isEmpty();
+        helloButton.setDisable(disableButtons);
+        byeButton.setDisable(disableButtons);
     }
 }

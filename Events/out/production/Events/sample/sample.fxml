@@ -8,11 +8,19 @@
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
     <TextField
             fx:id="nameField"
+            onKeyReleased="#handleKeyReleased"
             GridPane.rowIndex="0"
             GridPane.columnIndex="0"/>
     <Button
             GridPane.rowIndex="1"
             GridPane.columnIndex="0"
             onAction="#onButtonClicked"
+            fx:id="helloButton"
             text="Sey Hello"/>
+    <Button
+            GridPane.rowIndex="1"
+            GridPane.columnIndex="1"
+            onAction="#onButtonClicked"
+            fx:id="byeButton"
+            text="Sey Bye"/>
 </GridPane>
