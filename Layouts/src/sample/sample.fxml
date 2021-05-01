@@ -12,6 +12,22 @@
                style="-fx-border-color: aquamarine; -fx-border-width: 2"
                alignment="CENTER"/>
     </top>
+    <center>
+        <Label
+                text="This label is in the center position"/>
+    </center>
+    <left>
+        <Label
+                text="This label is in the left position"
+                BorderPane.alignment="CENTER_LEFT"
+                alignment="CENTER"/>
+    </left>
+    <right>
+        <Label
+                BorderPane.alignment="CENTER_RIGHT"
+                text="This label is in the right position"
+                alignment="CENTER"/>
+    </right>
     <bottom>
         <HBox spacing="10" alignment="TOP_RIGHT">
             <padding>
