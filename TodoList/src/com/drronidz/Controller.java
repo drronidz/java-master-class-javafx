@@ -2,8 +2,6 @@ package com.drronidz;
 
 import com.drronidz.model.TodoData;
 import com.drronidz.model.TodoItem;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
@@ -14,7 +12,6 @@ import javafx.util.Callback;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
 import java.util.Optional;
 
 public class Controller {
@@ -31,7 +28,10 @@ public class Controller {
     @FXML
     public TextArea itemDetailsTextArea;
 
-    private List<TodoItem> todoItems;
+    @FXML
+    private ContextMenu listContextMenu;
+
+//    private List<TodoItem> todoItems;
     public void initialize(){
 
 //        TodoItem itemOne = new TodoItem(
@@ -69,17 +69,22 @@ public class Controller {
 //
 //        TodoData.getInstance().setTodoItems(todoItems);
 
-        todoListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<TodoItem>() {
-            @Override
-            public void changed(ObservableValue<? extends TodoItem> observable, TodoItem oldValue, TodoItem newValue) {
-                if(newValue != null) {
-                    TodoItem item = todoListView.getSelectionModel().getSelectedItem();
-                    itemDetailsTextArea.setText(item.getDetails());
-                    // here we find all the patterns of DateTime
-                    //https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
-                    DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
-                    deadLineLabel.setText(dateTimeFormatter.format(item.getDeadline()));
-                }
+        listContextMenu = new ContextMenu();
+        MenuItem deleteMenuItem = new MenuItem("Delete");
+        deleteMenuItem.setOnAction(event -> {
+            TodoItem item = todoListView.getSelectionModel().getSelectedItem();
+            deleteItem(item);
+        });
+
+        listContextMenu.getItems().addAll(deleteMenuItem);
+        todoListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if(newValue != null) {
+                TodoItem item = todoListView.getSelectionModel().getSelectedItem();
+                itemDetailsTextArea.setText(item.getDetails());
+                // here we find all the patterns of DateTime
+                //https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
+                DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
+                deadLineLabel.setText(dateTimeFormatter.format(item.getDeadline()));
             }
         });
 
@@ -87,27 +92,37 @@ public class Controller {
         todoListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         todoListView.getSelectionModel().selectFirst();
 
-        todoListView.setCellFactory(new Callback<ListView<TodoItem>, ListCell<TodoItem>>() {
+        todoListView.setCellFactory(new Callback<>() {
             @Override
             public ListCell<TodoItem> call(ListView<TodoItem> param) {
-                ListCell<TodoItem> cell = new ListCell<TodoItem>() {
+                ListCell<TodoItem> cell = new ListCell<>() {
                     @Override
                     protected void updateItem(TodoItem item, boolean empty) {
                         super.updateItem(item, empty);
-                        if(empty) {
-                          setText(null);
+                        if (empty) {
+                            setText(null);
                         } else {
                             setText(item.getShortDescription());
-                            if(item.getDeadline().isBefore(LocalDate.now())) {
+                            if (item.getDeadline().isBefore(LocalDate.now())) {
                                 setTextFill(Color.GREEN);
-                            } else if(item.getDeadline().isAfter(LocalDate.now().plusDays(1))) {
+                            } else if (item.getDeadline().isAfter(LocalDate.now().plusDays(1))) {
                                 setTextFill(Color.GOLDENROD);
-                            } else if(item.getDeadline().isEqual(LocalDate.now())) {
+                            } else if (item.getDeadline().isEqual(LocalDate.now())) {
                                 setTextFill(Color.RED);
                             }
                         }
                     }
                 };
+
+                cell.emptyProperty().addListener(
+                        (obs, wasEmpty, isNowEmpty) -> {
+                            if (isNowEmpty) {
+                                cell.setContextMenu(null);
+                            } else {
+                                cell.setContextMenu(listContextMenu);
+                            }
+                        }
+                );
                 return cell;
             }
         });
@@ -141,6 +156,17 @@ public class Controller {
         }
     }
 
+    public void deleteItem(TodoItem item) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Delete Todo Item");
+        alert.setHeaderText("Delete item: " + item.getShortDescription());
+        alert.setContentText("Are you sure? Press OK to confirm, or cancel to Back out.");
+        Optional<ButtonType> result = alert.showAndWait();
+        if(result.isPresent() && (result.get() == ButtonType.OK)) {
+            TodoData.getInstance().deleteTodoItem(item);
+        }
+    }
+
 //    @FXML
 //    public void handleClickListView() {
 //        TodoItem item = todoListView.getSelectionModel().getSelectedItem();
@@ -153,4 +179,6 @@ public class Controller {
 ////        stringBuilder.append(item.getDeadline().toString());
 ////        itemDetailsTextArea.setText(stringBuilder.toString());
 //    }
+
+
 }
