@@ -14,11 +14,12 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SeparatorMenuItem?>
 <BorderPane fx:controller="com.drronidz.Controller"
+            fx:id="mainBorderPane"
             xmlns:fx="http://javafx.com/fxml">
     <top>
         <MenuBar>
             <Menu text="File">
-                <MenuItem text="New..."/>
+                <MenuItem text="New..." onAction="#showNewItemDialog"/>
                 <SeparatorMenuItem/>
                 <MenuItem text="Exit"/>
             </Menu>
