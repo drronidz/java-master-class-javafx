@@ -55,7 +55,7 @@ public class TodoData {
 
                 String shortDescription = itemPieces[0];
                 String details = itemPieces[1];
-                String dataString = itemPieces[3];
+                String dataString = itemPieces[2];
 
                 LocalDate date = LocalDate.parse(dataString, dateTimeFormatter);
                 TodoItem todoItem = new TodoItem(shortDescription, details, date);
@@ -77,6 +77,7 @@ public class TodoData {
                         item.getShortDescription(),
                         item.getDetails(),
                         item.getDeadline().format(dateTimeFormatter)));
+                bufferedWriter.newLine();
             }
         } finally {
             if(bufferedWriter != null) {
