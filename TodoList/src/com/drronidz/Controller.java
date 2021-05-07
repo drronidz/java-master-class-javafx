@@ -1,6 +1,11 @@
 package com.drronidz;
 
 import com.drronidz.model.TodoItem;
+import javafx.fxml.FXML;
+import javafx.scene.control.ListView;
+import javafx.scene.control.SelectionMode;
+import javafx.scene.control.TextArea;
+
 
 import java.time.LocalDate;
 import java.time.Month;
@@ -9,8 +14,13 @@ import java.util.List;
 
 public class Controller {
 
-    private List<TodoItem> todoItems;
+    @FXML
+    private ListView<TodoItem> todoListView;
 
+    @FXML
+    public TextArea itemDetailsTextArea;
+
+    private List<TodoItem> todoItems;
     public void initialize(){
 
         TodoItem itemOne = new TodoItem(
@@ -46,5 +56,20 @@ public class Controller {
         todoItems.add(itemFour);
         todoItems.add(itemFive);
 
+        todoListView.getItems().setAll(todoItems);
+        todoListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+
+    }
+
+    @FXML
+    public void handleClickListView() {
+        TodoItem item = todoListView.getSelectionModel().getSelectedItem();
+        //System.out.println("The selected item is " + item);
+        itemDetailsTextArea.setText(item.getDetails());
+        StringBuilder stringBuilder = new StringBuilder(item.getDetails());
+        stringBuilder.append("\n\n\n\n");
+        stringBuilder.append("Due: ");
+        stringBuilder.append(item.getDeadline().toString());
+        itemDetailsTextArea.setText(stringBuilder.toString());
     }
 }
