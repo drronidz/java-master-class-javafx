@@ -12,6 +12,7 @@ import javafx.scene.control.TextArea;
 
 import java.time.LocalDate;
 import java.time.Month;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,6 +69,10 @@ public class Controller {
                 if(newValue != null) {
                     TodoItem item = todoListView.getSelectionModel().getSelectedItem();
                     itemDetailsTextArea.setText(item.getDetails());
+                    // here we find all the patterns of DateTime
+                    //https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
+                    DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
+                    deadLineLabel.setText(dateTimeFormatter.format(item.getDeadline()));
                 }
             }
         });
