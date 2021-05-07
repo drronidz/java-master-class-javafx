@@ -26,6 +26,7 @@
                     GridPane.columnIndex="0" />
             <TextArea
                     fx:id="detailsArea"
+                    wrapText="true"
                     GridPane.rowIndex="1"
                     GridPane.columnIndex="1"/>
             <Label
