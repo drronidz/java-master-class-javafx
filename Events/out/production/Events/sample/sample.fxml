@@ -32,4 +32,8 @@
               GridPane.rowIndex="2"
               GridPane.columnIndex="0"
               GridPane.columnSpan="2"/>
+    <Label fx:id="ourLabel"
+           text="Nothing has happened"
+           GridPane.rowIndex="3"
+           GridPane.columnIndex="0" />
 </GridPane>
