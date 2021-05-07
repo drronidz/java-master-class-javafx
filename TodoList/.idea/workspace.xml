@@ -20,22 +20,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/TodoList/com/drronidz/DialogController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TodoList/com/drronidz/todoItemDialog.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoListItems.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TodoListItems.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TodoList/com/drronidz/Controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TodoList/com/drronidz/Controller$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TodoList/com/drronidz/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TodoList/com/drronidz/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TodoList/com/drronidz/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TodoList/com/drronidz/MainWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TodoList/com/drronidz/DialogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TodoList/com/drronidz/DialogController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TodoList/com/drronidz/model/TodoData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TodoList/com/drronidz/model/TodoData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TodoList/com/drronidz/todoItemDialog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TodoList/com/drronidz/todoItemDialog.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/drronidz/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/drronidz/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/drronidz/DialogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/drronidz/DialogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/drronidz/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/drronidz/MainWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/drronidz/model/TodoData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/drronidz/model/TodoData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/drronidz/todoItemDialog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/drronidz/todoItemDialog.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -124,7 +125,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="RunManager" selected="Application.Main (1)">
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -240,7 +241,7 @@
       <option name="presentableId" value="Default" />
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
-      <workItem from="1620393869151" duration="7482000" />
+      <workItem from="1620393869151" duration="8654000" />
     </task>
     <servers />
   </component>
@@ -268,22 +269,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="573" y="127" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1620401703180" />
-    <state width="1491" height="209" key="GridCell.Tab.0.bottom" timestamp="1620403630141">
+    <state width="1491" height="209" key="GridCell.Tab.0.bottom" timestamp="1620405374253">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="209" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1620403630141" />
-    <state width="1491" height="209" key="GridCell.Tab.0.center" timestamp="1620403630141">
+    <state width="1491" height="209" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1620405374253" />
+    <state width="1491" height="209" key="GridCell.Tab.0.center" timestamp="1620405374253">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="209" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1620403630141" />
-    <state width="1491" height="209" key="GridCell.Tab.0.left" timestamp="1620403630141">
+    <state width="1491" height="209" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1620405374253" />
+    <state width="1491" height="209" key="GridCell.Tab.0.left" timestamp="1620405374253">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="209" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1620403630141" />
-    <state width="1491" height="209" key="GridCell.Tab.0.right" timestamp="1620403630141">
+    <state width="1491" height="209" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1620405374253" />
+    <state width="1491" height="209" key="GridCell.Tab.0.right" timestamp="1620405374253">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="209" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1620403630141" />
+    <state width="1491" height="209" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1620405374253" />
     <state width="1491" height="260" key="GridCell.Tab.1.bottom" timestamp="1620403557523">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -300,9 +301,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1491" height="260" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1620403557523" />
-    <state x="276" y="56" key="SettingsEditor" timestamp="1620400015524">
+    <state x="276" y="56" key="SettingsEditor" timestamp="1620404655761">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="276" y="56" key="SettingsEditor/0.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1620400015524" />
+    <state x="276" y="56" key="SettingsEditor/0.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1620404655761" />
   </component>
 </project>

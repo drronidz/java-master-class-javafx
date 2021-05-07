@@ -25,11 +25,14 @@ public class DialogController {
     @FXML
     public TextField shortDescription;
 
-    public void processResult() {
+    public TodoItem processResult() {
         String shortDesc = shortDescription.getText().trim();
         String details = detailsArea.getText().trim();
         LocalDate deadLineValue = deadlinePicker.getValue();
-        TodoData.getInstance().addTodoItem(new TodoItem (shortDesc, details, deadLineValue));
+
+        TodoItem newItem = new TodoItem(shortDesc, details, deadLineValue);
+        TodoData.getInstance().addTodoItem(newItem);
+        return newItem;
     }
 
 }
