@@ -7,11 +7,13 @@
 <GridPane fx:controller="sample.Controller"
           xmlns:fx="http://javafx.com/fxml"
           alignment="center"
+          fx:id="gridPane"
           stylesheets="@style.css"
           hgap="10"
           vgap="10">
-    <Button text="Button One"
+    <Button text="Open..."
             id="button_one"
+            onAction="#handleClick"
             style="-fx-background-color: blue; -fx-text-fill: white"
             GridPane.rowIndex="0"
             GridPane.columnIndex="0" />
@@ -24,6 +26,7 @@
             GridPane.columnIndex="2" />
     <Button
             text="Button Four"
+            fx:id="buttonFour"
             GridPane.rowIndex="0"
             GridPane.columnIndex="3" />
     <Button
@@ -34,4 +37,12 @@
             text="Choice One"
             GridPane.rowIndex="1"
             GridPane.columnIndex="0" />
+    <Label text="JavaFX Effects"
+           GridPane.rowIndex="1"
+           fx:id="label"
+           onMouseEntered="#handleMouseEnter"
+           onMouseExited="#handleMouseExit"
+           rotate="90"
+           GridPane.columnIndex="1"
+           />
 </GridPane>
