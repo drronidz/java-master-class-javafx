@@ -13,20 +13,43 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.ToggleButton?>
 <BorderPane fx:controller="com.drronidz.Controller"
             fx:id="mainBorderPane"
             xmlns:fx="http://javafx.com/fxml">
     <top>
-        <MenuBar>
-            <Menu text="File">
-                <MenuItem text="New..." onAction="#showNewItemDialog"/>
-                <SeparatorMenuItem/>
-                <MenuItem text="Exit"/>
-            </Menu>
-        </MenuBar>
+        <VBox>
+            <MenuBar>
+                <Menu text="File">
+                    <MenuItem text="New..." onAction="#showNewItemDialog"/>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="Exit" onAction="#handleExit"/>
+                </Menu>
+            </MenuBar>
+            <ToolBar>
+                <HBox>
+                    <Button  text="New..." onAction="#showNewItemDialog" >
+                        <tooltip>
+                            <Tooltip  style="-fx-background-color: red; -fx-background-radius: 0"
+                                      text="Add a New Todo Item"/>
+                        </tooltip>
+                    </Button>
+                    <ToggleButton
+                            text="Today's Items"
+                            onAction="#handleFilterButton"
+                            fx:id="filterToggleButton">
+                        <tooltip>
+                            <Tooltip text="Button Down: Show Today's items only. Button Up: Show all items"/>
+                        </tooltip>
+                    </ToggleButton>
+                </HBox>
+            </ToolBar>
+        </VBox>
     </top>
     <left>
-        <ListView fx:id="todoListView">
+        <ListView fx:id="todoListView" onKeyReleased="#handleKeyPressed">
 
         </ListView>
     </left>
