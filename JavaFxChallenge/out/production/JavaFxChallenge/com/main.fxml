@@ -11,6 +11,7 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuItem?>
 <BorderPane fx:controller="com.Controller"
+            fx:id="mainPanel"
             xmlns:fx="http://javafx.com/fxml">
     <top>
         <MenuBar>
@@ -24,7 +25,7 @@
         </MenuBar>
     </top>
     <center>
-        <TableView fx:id="contactTable">
+        <TableView fx:id="contactsTable">
             <columns>
                 <TableColumn text="First Name">
                     <cellValueFactory>
