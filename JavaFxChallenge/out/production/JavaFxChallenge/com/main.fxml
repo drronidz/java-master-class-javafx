@@ -20,6 +20,9 @@
                     <items>
                         <MenuItem text="New..." onAction="#showAddContactDialog"/>
                     </items>
+                    <items>
+                        <MenuItem text="Edit..." onAction="#showEditContactDialog"/>
+                    </items>
                 </Menu>
             </menus>
         </MenuBar>
